@@ -68,8 +68,8 @@ namespace CatalogAPI.Controllers
         }
 
        // [Authorize(Roles = "admin")]
-        [HttpPost("product")]
-        public ActionResult<CatalogItem> AddProductWithImage()
+        [HttpPost("product",Name = "AddProductWithImage")]
+        public ActionResult<CatalogItem> AddProduct()
         {
             //var imageName = SaveImageToLocal(Request.Form.Files[0]);
             var imageName = SaveImageToCloudAsync(Request.Form.Files[0]).GetAwaiter().GetResult();
